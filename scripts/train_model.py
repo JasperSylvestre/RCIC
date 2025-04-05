@@ -175,7 +175,7 @@ def evaluate_model(model, val_ds, device, batch_size):
   # Disable gradient computation
   with torch.no_grad():
     # Create a data loader for the validation dataset
-    val_loader = DataLoader(val_ds, batch_size=32, shuffle=False)
+    val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False)
 
     # Make predictions on the validation dataset
     for inputs, labels in val_loader:
@@ -245,7 +245,7 @@ for name, model in model_dict_final.items():
 
   print(f'{name.title()} Accuracy: {100 * accuracy:.2f}%')
 
-# Save final models
+# Save final models on CPU
 for name, model in model_dict_final.items():
   with open(f'../models/final-{name}.dill', 'wb') as f:
     dill.dump(model.to('cpu'), f)
