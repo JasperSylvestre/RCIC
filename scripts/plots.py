@@ -68,7 +68,7 @@ legends.append(plt.Line2D([], [], color='black', label='Swap used', linestyle=':
 plt.legend(handles=legends, loc='upper right', bbox_to_anchor=(1.21, 1))
 
 # Save/show
-plt.savefig('../results/prediction_time_vs_cpu_speed_by_ram_plot.png')
+plt.savefig('../results/prediction_time_vs_cpu_speed_by_ram_plot.png', bbox_inches='tight')
 plt.show()
 
 df = df[['CPU speed', 'RAM', 'Pre-processing time']]
