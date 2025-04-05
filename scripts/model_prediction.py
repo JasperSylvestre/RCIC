@@ -16,19 +16,12 @@ from PIL import Image
 from torchvision import transforms
 import time
 
-# Create and enter scripts directory if not present
+# Create necessary directories and enter scripts folder
 if os.path.basename(os.getcwd()) != 'scripts':
-  if not os.path.exists('scripts'):
-    os.makedirs('scripts')
+  os.makedirs('scripts', exist_ok=True)
   os.chdir('scripts')
-
-# Create models directory
-if not os.path.exists('../models'):
-  os.makedirs('../models')
-
-# Create data/test directory
-if not os.path.exists('../data/test'):
-  os.makedirs('../data/test')
+os.makedirs('../models', exist_ok=True)
+os.makedirs('../data/test/test_images', exist_ok=True)
 
 # Read in final models
 model_dict = {}
