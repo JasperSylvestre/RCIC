@@ -61,7 +61,7 @@ for i, model in enumerate(models):
   legends.append(plt.Line2D([], [], color=colors[i], label=model, linestyle='-', marker='None'))        # model
 
 for i, ram in enumerate(ram_values):
-  legends.append(plt.Line2D([], [], color='black', label=str(ram), linestyle='-', marker=markers[i]))   # ram values
+  legends.append(plt.Line2D([], [], color='black', label=f'{ram} MB RAM', linestyle='-', marker=markers[i]))   # ram values
 
 legends.append(plt.Line2D([], [], color='black', label='Swap used', linestyle=':', marker='None'))      # swap
 
@@ -85,10 +85,6 @@ plt.tight_layout()
 for i, ram in enumerate(ram_values):
   ram_df = df[df['RAM'] == ram]
   plt.plot(ram_df['CPU speed'], ram_df['Pre-processing time'], label=f'{ram} MB RAM', marker='o', color=colors[i])
-
-# Increase ylim
-ymin, ymax = plt.ylim()
-plt.ylim(0, ymax * 1.1)
 
 plt.legend()
 
