@@ -1,4 +1,4 @@
-# RCIC: Resource-Constrained Image Classification
+# Resource-Constrained Image Classification
 
 ## Overview
 
